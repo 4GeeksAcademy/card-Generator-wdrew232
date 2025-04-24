@@ -1,34 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="./assets/img/4geeks.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <link rel="icon" href="./assets/img/4geeks.ico" />
+    <title>Card Generator</title>
 
-    <!-- Fontawesome is our recomended library for icons -->
+    <!-- Fontawesome is our recommended library for icons -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
       crossorigin="anonymous"
     />
-</head>
-<body>
-  <div id="cardContainer">
-    <div>
-      <div id ="card">
-        <p class="suit"></p>
-      <p id ="number"></p>
-      <p class="suit"></p>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="cardContainer" style="text-align: center; margin-top: 50px;">
+      <div
+        id="card"
+        style="border: 2px solid black; width: 150px; height: 200px; margin: auto; border-radius: 10px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; font-size: 2rem; position: relative;"
+      >
+        <p class="suit" style="margin: 10px;"></p>
+        <p id="number" style="margin: 0;"></p>
+        <p class="suit" style="margin: 10px; transform: rotate(180deg);"></p>
       </div>
+      <button
+        id="generateBtn"
+        style="margin-top: 20px; padding: 10px 20px; font-size: 1rem; cursor: pointer;"
+      >
+        Generate Card
+      </button>
     </div>
-      <div>
-        <button id="generateBtn">Click me</button>
-      </div>
-  </div>
 
-    <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
+    <!-- Connect to JavaScript -->
     <script type="module" src="/app.js"></script>
   </body>
 </html>

@@ -1,33 +1,35 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
-
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
 const suits = ["♠", "♥", "♦", "♣"];
-const numbers = ["A", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+const numbers = [
+  "A",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "J",
+  "Q",
+  "K"
+];
 
 function generateCard() {
-const randomSuit = suits[Math.floor(Math.random() * 4)];
-  const randomNumber = numbers[Math.floor(Math.random() * 14)];
-    const card = randomNumber
-      const suit = randomSuit
-      document.getElementById('number').textContent = card;
-      document.getElementById('suit').textContent = suit;
-      
-      
-     
-      
-      if (randomSuit == "♥" || randomSuit == "♦" ) {
-        document.querySelectorAll('suit').style.color = "red";
-        console.log("red"); 
-      }
-      else  {
-          document.querySelector('#suit').style.color = "black"
-      }
-        
+  const randomSuit = suits[Math.floor(Math.random() * suits.length)];
+  const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+
+  const numberElement = document.getElementById("number");
+  const suitElements = document.querySelectorAll(".suit");
+
+  if (numberElement && suitElements.length > 0) {
+    numberElement.textContent = randomNumber;
+    suitElements.forEach(suitElement => {
+      suitElement.textContent = randomSuit;
+      suitElement.style.color =
+        randomSuit === "♥" || randomSuit === "♦" ? "red" : "black";
+    });
+  }
 }
 
-    document.getElementById('generateBtn').addEventListener('click', generateCard);
-  
+document.getElementById("generateBtn").addEventListener("click", generateCard);
